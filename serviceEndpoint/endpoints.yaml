@@ -1975,6 +1975,9 @@ components:
       schema:
         type: string
   securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
     accessToken:
       type: http
       description: Personal access token. Use any value for the user name and the
