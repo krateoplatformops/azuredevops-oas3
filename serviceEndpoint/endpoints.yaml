@@ -1528,6 +1528,8 @@ components:
           type: string
           description: Gets or sets the url of the endpoint.
       description: Represents an endpoint which may be used by an orchestration job.
+      required:
+        - description
     ServiceEndpointAuthenticationScheme:
       type: object
       properties:
