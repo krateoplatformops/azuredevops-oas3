@@ -4255,8 +4255,8 @@ components:
           type: string
           description: Name of the environment.
       description: Properties to create Environment.
-      # required:
-      #   - name
+      required:
+        - name
     EnvironmentDeploymentExecutionRecord:
       type: object
       properties:
