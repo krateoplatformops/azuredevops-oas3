@@ -4255,8 +4255,6 @@ components:
           type: string
           description: Name of the environment.
       description: Properties to create Environment.
-      required:
-        - name
     EnvironmentDeploymentExecutionRecord:
       type: object
       properties:
@@ -4379,8 +4377,6 @@ components:
           items:
             $ref: '#/components/schemas/EnvironmentResourceReference'
       description: Environment.
-      required:
-        - name
     EnvironmentLinkedResourceReference:
       type: object
       properties:
