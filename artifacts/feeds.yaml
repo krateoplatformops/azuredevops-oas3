@@ -2503,6 +2503,8 @@ components:
           type: string
           description: View name.
       description: An object that contains all of the settings for a specific feed.
+      required:
+        - name
     FeedPermission:
       type: object
       properties:
