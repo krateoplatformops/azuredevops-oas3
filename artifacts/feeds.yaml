@@ -9,7 +9,7 @@ info:
   license:
     name: MICROSOFT SOFTWARE LICENSE TERMS
     url: https://go.microsoft.com/fwlink/?LinkId=329770
-  version: 7.2-preview
+  version: "7.0"
 externalDocs:
   description: Azure DevOps REST APIs
   url: https://aka.ms/azure-devops-rest-apis
@@ -46,8 +46,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -63,10 +63,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: globalPermissions
       x-ms-vss-method: GetGlobalPermissions
-      x-ms-preview: true
     patch:
       tags:
       - Service  Settings
@@ -81,8 +80,8 @@ paths:
           type: string
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -107,10 +106,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: globalPermissions
       x-ms-vss-method: SetGlobalPermissions
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/feedchanges:
     get:
@@ -162,8 +160,8 @@ paths:
           format: int32
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -177,10 +175,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feedChanges
       x-ms-vss-method: GetFeedChanges
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/feedchanges/{feedId}:
     get:
       tags:
@@ -214,8 +211,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -229,10 +226,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feedChanges
       x-ms-vss-method: GetFeedChange
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/feedrecyclebin:
     get:
       tags:
@@ -260,8 +256,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -277,19 +273,13 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feedRecycleBin
       x-ms-vss-method: GetFeedsFromRecycleBin
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/feedrecyclebin/{feedId}:
     delete:
       tags:
       - Feed Recycle Bin
-      description: |-
-        Permanently delete a feed and all of its packages. The action is irreversible and the package content will be deleted immediately.
-
-        The project parameter must be supplied if the feed was created in a project.
-        If the feed is not associated with any project, omit the project parameter from the request.
       operationId: Feed Recycle Bin_Permanent Delete Feed
       parameters:
       - name: organization
@@ -300,7 +290,6 @@ paths:
           type: string
       - name: feedId
         in: path
-        description: Name or Id of the feed.
         required: true
         schema:
           type: string
@@ -314,8 +303,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -326,18 +315,12 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feedRecycleBin
       x-ms-vss-method: PermanentDeleteFeed
-      x-ms-preview: true
     patch:
       tags:
       - Feed Recycle Bin
-      description: |-
-        Restores a deleted feed and all of its packages.
-
-        The project parameter must be supplied if the feed was created in a project.
-        If the feed is not associated with any project, omit the project parameter from the request.
       operationId: Feed Recycle Bin_Restore Deleted Feed
       parameters:
       - name: organization
@@ -348,7 +331,6 @@ paths:
           type: string
       - name: feedId
         in: path
-        description: Name or Id of the feed.
         required: true
         schema:
           type: string
@@ -362,8 +344,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -380,10 +362,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feedRecycleBin
       x-ms-vss-method: RestoreDeletedFeed
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/feeds:
     get:
@@ -469,8 +450,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -486,10 +467,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feeds
       x-ms-vss-method: GetFeeds
-      x-ms-preview: true
     post:
       tags:
       - Feed  Management
@@ -516,8 +496,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -527,7 +507,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Feed'
+              $ref: '#/components/schemas/FeedCore'
         required: true
       responses:
         "200":
@@ -539,10 +519,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_write
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feeds
       x-ms-vss-method: CreateFeed
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/feeds/{feedId}:
     get:
@@ -582,8 +561,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -597,10 +576,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feeds
       x-ms-vss-method: GetFeed
-      x-ms-preview: true
     delete:
       tags:
       - Feed  Management
@@ -633,8 +611,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -645,10 +623,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feeds
       x-ms-vss-method: DeleteFeed
-      x-ms-preview: true
     patch:
       tags:
       - Feed  Management
@@ -681,8 +658,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -703,10 +680,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: feeds
       x-ms-vss-method: UpdateFeed
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/packagechanges:
     get:
@@ -758,8 +734,8 @@ paths:
           format: int32
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -773,10 +749,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: packageChanges
       x-ms-vss-method: GetPackageChanges
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/packagemetricsbatch:
     post:
       tags:
@@ -804,8 +779,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -827,10 +802,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_write
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: packageMetricsBatch
       x-ms-vss-method: QueryPackageMetrics
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/packages:
     get:
@@ -950,8 +924,8 @@ paths:
           format: uuid
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -967,10 +941,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: packages
       x-ms-vss-method: GetPackages
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/packages/{packageId}:
     get:
       tags:
@@ -1048,8 +1021,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1063,10 +1036,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: packages
       x-ms-vss-method: GetPackage
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/Packages/{packageId}/versionmetricsbatch:
     post:
       tags:
@@ -1100,8 +1072,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1123,10 +1095,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_write
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: versionMetricsBatch
       x-ms-vss-method: QueryPackageVersionMetrics
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/Packages/{packageId}/versions:
     get:
@@ -1184,8 +1155,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1201,10 +1172,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: versions
       x-ms-vss-method: GetPackageVersions
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/Packages/{packageId}/versions/{packageVersionId}:
     get:
       tags:
@@ -1269,8 +1239,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1284,10 +1254,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: versions
       x-ms-vss-method: GetPackageVersion
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/Packages/{packageId}/Versions/{packageVersionId}/provenance:
     get:
       tags:
@@ -1335,7 +1304,7 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
+        description: Version of the API to use.  This should be set to '7.0-preview.1'
           to use this version of the api.
         required: true
         schema:
@@ -1350,7 +1319,7 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: 7.0-preview.1
       x-ms-vss-resource: provenance
       x-ms-vss-method: GetPackageVersionProvenance
       x-ms-preview: true
@@ -1409,8 +1378,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1426,10 +1395,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: permissions
       x-ms-vss-method: GetFeedPermissions
-      x-ms-preview: true
     patch:
       tags:
       - Feed  Management
@@ -1462,8 +1430,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1488,10 +1456,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: permissions
       x-ms-vss-method: SetFeedPermissions
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/RecycleBin/Packages:
     get:
@@ -1559,8 +1526,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1576,10 +1543,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: recycleBinPackages
       x-ms-vss-method: GetRecycleBinPackages
-      x-ms-preview: true
     delete:
       tags:
       - Recycle  Bin
@@ -1609,8 +1575,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1624,10 +1590,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: recycleBinPackages
       x-ms-vss-method: EmptyRecycleBin
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/RecycleBin/Packages/{packageId}:
     get:
       tags:
@@ -1673,8 +1638,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1688,10 +1653,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: recycleBinPackages
       x-ms-vss-method: GetRecycleBinPackage
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/RecycleBin/Packages/{packageId}/Versions:
     get:
       tags:
@@ -1737,8 +1701,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1754,10 +1718,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: recycleBinVersions
       x-ms-vss-method: GetRecycleBinPackageVersions
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/RecycleBin/Packages/{packageId}/Versions/{packageVersionId}:
     get:
       tags:
@@ -1810,8 +1773,8 @@ paths:
           type: boolean
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1825,10 +1788,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: recycleBinVersions
       x-ms-vss-method: GetRecycleBinPackageVersion
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/retentionpolicies:
     get:
       tags:
@@ -1862,8 +1824,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1877,10 +1839,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: retentionPolicies
       x-ms-vss-method: GetFeedRetentionPolicies
-      x-ms-preview: true
     put:
       tags:
       - Retention  Policies
@@ -1913,8 +1874,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1935,10 +1896,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_write
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: retentionPolicies
       x-ms-vss-method: SetFeedRetentionPolicies
-      x-ms-preview: true
       x-codegen-request-body-name: body
     delete:
       tags:
@@ -1972,8 +1932,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -1984,10 +1944,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: retentionPolicies
       x-ms-vss-method: DeleteFeedRetentionPolicies
-      x-ms-preview: true
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/views:
     get:
       tags:
@@ -2020,8 +1979,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2037,10 +1996,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: views
       x-ms-vss-method: GetFeedViews
-      x-ms-preview: true
     post:
       tags:
       - Feed  Management
@@ -2072,8 +2030,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2094,10 +2052,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_write
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: views
       x-ms-vss-method: CreateFeedView
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/packaging/Feeds/{feedId}/views/{viewId}:
     get:
@@ -2137,8 +2094,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2152,10 +2109,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: views
       x-ms-vss-method: GetFeedView
-      x-ms-preview: true
     delete:
       tags:
       - Feed  Management
@@ -2193,8 +2149,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2205,10 +2161,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: views
       x-ms-vss-method: DeleteFeedView
-      x-ms-preview: true
     patch:
       tags:
       - Feed  Management
@@ -2246,8 +2201,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2268,10 +2223,9 @@ paths:
       security:
       - oauth2:
         - vso.packaging_manage
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: views
       x-ms-vss-method: UpdateFeedView
-      x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/{project}/_apis/public/packaging/Feeds/{feedId}/Packages/{packageId}/badge:
     get:
@@ -2313,8 +2267,8 @@ paths:
         x-ms-required: false
       - name: api-version
         in: query
-        description: Version of the API to use.  This should be set to '7.2-preview.1'
-          to use this version of the api.
+        description: Version of the API to use.  This should be set to '7.0' to use
+          this version of the api.
         required: true
         schema:
           type: string
@@ -2327,10 +2281,9 @@ paths:
                 type: string
                 format: Stream
       security: []
-      x-ms-docs-override-version: 7.2-preview.1
+      x-ms-docs-override-version: "7.0"
       x-ms-vss-resource: badge
       x-ms-vss-method: GetBadge
-      x-ms-preview: true
 components:
   schemas:
     BuildPackage:
@@ -2355,7 +2308,7 @@ components:
         protocolType:
           type: string
           description: Type of the package.
-      description: Feed & package info for build packages tab
+      description: ""
     Feed:
       properties:
         _links:
@@ -2531,8 +2484,8 @@ components:
           $ref: '#/components/schemas/ProjectReference'
         upstreamEnabled:
           type: boolean
-          description: This should always be true. Setting to false will override
-            all sources in UpstreamSources.
+          description: "OBSOLETE: This should always be true.  Setting to false will\
+            \ override all sources in UpstreamSources."
         upstreamSources:
           type: array
           description: A list of sources that this feed will fetch packages from.  An
@@ -2550,20 +2503,6 @@ components:
           type: string
           description: View name.
       description: An object that contains all of the settings for a specific feed.
-    FeedIdsResult:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        projectId:
-          type: string
-          format: uuid
-        projectName:
-          type: string
-      description: ""
     FeedPermission:
       type: object
       properties:
@@ -2662,7 +2601,8 @@ components:
             \ ] ]]></description></item></list>"
         upstreamEnabled:
           type: boolean
-          description: "If set, the feed can proxy packages from an upstream feed"
+          description: "OBSOLETE: If set, the feed can proxy packages from an upstream\
+            \ feed"
         upstreamSources:
           type: array
           description: A list of sources that this feed will fetch packages from.  An
@@ -2845,7 +2785,7 @@ components:
             type sort order.
         isListed:
           type: boolean
-          description: (NuGet and Cargo Only) True if this package is listed.
+          description: (NuGet Only) True if this package is listed.
         normalizedVersion:
           type: string
           description: Normalized version using normalization rules specific to a
@@ -3343,10 +3283,10 @@ components:
       properties:
         value:
           type: string
-          description: The serialized item.
           format: T
-      description: This class is used to serialize collections as a single JSON object
-        on the wire.
+      description: "This class is used to serialized collections as a single JSON\
+        \ object on the wire, to avoid serializing JSON arrays directly to the client,\
+        \ which can be a security hole"
       allOf:
       - $ref: '#/components/schemas/VssJsonCollectionWrapperBase'
     VssJsonCollectionWrapperBase:
@@ -3354,14 +3294,21 @@ components:
       properties:
         count:
           type: integer
-          description: The number of serialized items.
           format: int32
       description: ""
   parameters:
+    api-Version:
+      name: api-version
+      in: query
+      description: Version of the API to use.  This should be set to '7.0' to use
+        this version of the api.
+      required: true
+      schema:
+        type: string
     api-Version-preview.1:
       name: api-version
       in: query
-      description: Version of the API to use.  This should be set to '7.2-preview.1'
+      description: Version of the API to use.  This should be set to '7.0-preview.1'
         to use this version of the api.
       required: true
       schema:
