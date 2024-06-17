@@ -210,7 +210,7 @@ paths:
         schema:
           type: string
       responses:
-        "200":
+        "204":
           description: successful operation
           content: {}
       security:
