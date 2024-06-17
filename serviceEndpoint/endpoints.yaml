@@ -434,7 +434,7 @@ paths:
       x-ms-vss-method: QueryServiceEndpoint
       x-ms-preview: true
       x-codegen-request-body-name: body
-  /{organization}/{project}/_apis/serviceendpoint/endpoints:
+  /{organization}/{project}/_apis/serviceendpoint/endpoints?:
     get:
       tags:
       - Endpoints
@@ -2047,7 +2047,7 @@ x-ms-paths:
         - vso.serviceendpoint_query
       x-ms-examples:
         Execute service endpoint request:
-  /{organization}/{project}/_apis/serviceendpoint/endpoints?:
+  /{organization}/{project}/_apis/serviceendpoint/endpoints:
     get:
       tags:
       - Endpoints
