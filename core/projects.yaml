@@ -248,7 +248,7 @@ paths:
               $ref: '#/components/schemas/TeamProject'
         required: true
       responses:
-        "200":
+        "202":
           description: successful operation
           content:
             application/json:
@@ -342,7 +342,7 @@ paths:
         schema:
           type: string
       responses:
-        "200":
+        "202":
           description: successful operation
           content:
             application/json:
