@@ -1016,10 +1016,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GraphUserCreationContext'
+              $ref: '#/components/schemas/GraphUserBody'
         required: true
       responses:
         "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphUser'
+        "201":
           description: successful operation
           content:
             application/json:
