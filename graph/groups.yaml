@@ -175,7 +175,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GraphGroupCreationContext'
+              $ref: '#/components/schemas/GraphGroupBody'
         required: true
       responses:
         "200":
@@ -1270,6 +1270,17 @@ components:
       description: Graph group entity
       allOf:
         - $ref: '#/components/schemas/GraphMember'
+    GraphGroupBody: 
+      properties:
+        originId:
+          type: string
+        storageKey:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+      description: Graph group entity
     GraphGroupCreationContext:
       type: object
       properties:
