@@ -1564,6 +1564,15 @@ components:
       description: Graph user entity
       allOf:
         - $ref: '#/components/schemas/GraphMember'
+    GraphUserBody:
+      properties:
+        principalName:
+          type: string
+        originId:
+          type: string
+        storageKey:
+          type: string
+      description: Graph user entity
     GraphUserCreationContext:
       type: object
       properties:
