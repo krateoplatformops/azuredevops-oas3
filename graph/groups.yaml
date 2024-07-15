@@ -184,6 +184,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GraphGroup'
+        "201":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphGroup'
       security:
         - oauth2:
             - vso.graph_manage
