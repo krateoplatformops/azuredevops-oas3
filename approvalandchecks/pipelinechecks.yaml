@@ -533,6 +533,7 @@ components:
       allOf:
         - $ref: '#/components/schemas/ApprovalConfig'
     Settings:
+      type: object
       allOf:
         - $ref: '#/components/schemas/ApprovalConfigSettings'
         - $ref: '#/components/schemas/TaskCheckConfig'
