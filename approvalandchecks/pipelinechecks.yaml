@@ -532,8 +532,14 @@ components:
       description: Config to create a new approval.
       allOf:
         - $ref: '#/components/schemas/ApprovalConfig'
+    Settings:
+      allOf:
+        - $ref: '#/components/schemas/ApprovalConfigSettings'
+        - $ref: '#/components/schemas/TaskCheckConfig'
     CheckConfiguration:
       properties:
+        settings:
+          $ref: '#/components/schemas/Settings'
         _links:
           $ref: '#/components/schemas/ReferenceLinks'
         createdBy:
