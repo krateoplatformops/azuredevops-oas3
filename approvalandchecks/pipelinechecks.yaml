@@ -227,7 +227,7 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        "204":
           description: successful operation
           content: {}
       x-ms-docs-override-version: 7.0-preview.1
