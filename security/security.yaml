@@ -64,7 +64,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/JObject'
+              $ref: '#/components/schemas/AccessControlBody'
         required: true
       responses:
         "200":
@@ -587,6 +587,20 @@ components:
           type: string
           description: "Type of descriptor (for example, Windows, Passport, etc.)."
       description: "An Identity descriptor is a wrapper for the identity type (Windows SID, Passport) along with a unique identifier such as the SID or PUID."
+    AccessControlBody:
+      type: object
+      properties:
+        accessControlEntries:
+          type: array
+          description: The list of access control entries in this access control list.
+          items:
+            $ref: '#/components/schemas/AccessControlEntry'
+        token:
+          type: string
+          description: The token that this access control list is for.
+        merge:
+          type: boolean
+          description: True to merge the existing access control entries with the new ones, false to replace the existing access control entries.
     JObject:
       type: object
       properties:
