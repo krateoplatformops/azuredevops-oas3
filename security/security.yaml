@@ -511,7 +511,8 @@ components:
           description: The set of permission bits that represent the actions that the associated descriptor is not allowed to perform.
           format: int32
         descriptor:
-          $ref: '#/components/schemas/IdentityDescriptor'
+          type: string
+          # $ref: '#/components/schemas/IdentityDescriptor'
         extendedInfo:
           $ref: '#/components/schemas/AceExtendedInformation'
       description: Class for encapsulating the allowed and denied permissions for a given IdentityDescriptor.
