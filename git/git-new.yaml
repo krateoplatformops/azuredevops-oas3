@@ -12017,12 +12017,12 @@ x-ms-paths:
           required: true
           x-ms-required: false
           type: string
-        - $ref: '#components/parameters/api-Version-preview.1'
+        - $ref: '#/components/parameters/api-Version-preview.1'
       responses:
         "200":
           description: successful operation
           schema:
-            $ref: '#components/definitions/GitRepository'
+            $ref: '#/components/schemas/GitRepository'
       security:
         - oauth2:
             - vso.code
@@ -12245,14 +12245,14 @@ x-ms-paths:
           description: Alias or display name of the committer
           required: false
           type: string
-        - $ref: '#components/parameters/api-Version-preview.2'
+        - $ref: '#/components/parameters/api-Version-preview.2'
       responses:
         "200":
           description: successful operation
           schema:
             type: array
             items:
-              $ref: '#components/definitions/GitCommitRef'
+              $ref: '#/components/schemas/GitCommitRef'
       security:
         - oauth2:
             - vso.code
@@ -12395,12 +12395,12 @@ x-ms-paths:
           description: Set to true to sanitize an svg file and return it as image. Useful only if requested for svg file. Default is false.
           required: false
           type: boolean
-        - $ref: '#components/parameters/api-Version-preview.1'
+        - $ref: '#/components/parameters/api-Version-preview.1'
       responses:
         "200":
           description: successful operation
           schema:
-            $ref: '#components/definitions/GitItem'
+            $ref: '#/components/schemas/GitItem'
       security:
         - oauth2:
             - vso.code
@@ -12479,12 +12479,12 @@ x-ms-paths:
                 description: Interpret the version as a tag name
               - value: commit
                 description: Interpret the version as a commit ID (SHA1)
-        - $ref: '#components/parameters/api-Version-preview.2'
+        - $ref: '#/components/parameters/api-Version-preview.2'
       responses:
         "200":
           description: successful operation
           schema:
-            $ref: '#components/definitions/GitBranchStats'
+            $ref: '#/components/schemas/GitBranchStats'
       security:
         - oauth2:
             - vso.code
