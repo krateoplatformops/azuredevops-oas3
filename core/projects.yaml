@@ -754,7 +754,7 @@ paths:
               $ref: '#/components/schemas/WebApiTeam'
         required: true
       responses:
-        "200":
+        "201":
           description: successful operation
           content:
             application/json:
@@ -851,7 +851,7 @@ paths:
         schema:
           type: string
       responses:
-        "200":
+        "204":
           description: successful operation
           content: {}
       security:
