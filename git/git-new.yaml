@@ -12245,14 +12245,14 @@ x-ms-paths:
           description: Alias or display name of the committer
           required: false
           type: string
-        - $ref: '#/parameters/api-Version-preview.2'
+        - $ref: '#components/parameters/api-Version-preview.2'
       responses:
         "200":
           description: successful operation
           schema:
             type: array
             items:
-              $ref: '#/definitions/GitCommitRef'
+              $ref: '#components/definitions/GitCommitRef'
       security:
         - oauth2:
             - vso.code
