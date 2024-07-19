@@ -754,7 +754,7 @@ paths:
               $ref: '#/components/schemas/WebApiTeam'
         required: true
       responses:
-        "200":
+        "201":
           description: successful operation
           content:
             application/json:
