@@ -662,6 +662,11 @@ components:
               description: Just-in-time.
             - value: designerHyphenJson
               description: Designer-JSON.
+        path:
+          type: string
+          description: Path to the configuration file.
+        repository:
+          $ref: '#/components/schemas/RepositoryResource'
       description: Configuration parameters of the pipeline.
     CreatePipelineParameters:
       type: object
@@ -828,6 +833,12 @@ components:
               description: ""
             - value: azureReposGitHyphenated
               description: ""
+        id: 
+          type: string
+          description: The ID of the repository.
+        name:
+          type: string
+          description: The name of the repository.
       description: ""
     RepositoryResource:
       type: object
