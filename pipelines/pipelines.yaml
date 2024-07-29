@@ -666,7 +666,7 @@ components:
           type: string
           description: Path to the configuration file.
         repository:
-          $ref: '#/components/schemas/RepositoryResource'
+          $ref: '#/components/schemas/Repository'
       description: Configuration parameters of the pipeline.
     CreatePipelineParameters:
       type: object
