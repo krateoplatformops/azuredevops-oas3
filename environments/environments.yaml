@@ -521,7 +521,7 @@ paths:
         schema:
           type: string
       responses:
-        "200":
+        "204":
           description: successful operation
           content: {}
       security:
@@ -2438,7 +2438,7 @@ paths:
         in: query
         description: A comma-separated list of pool ids to get the corresponding queues
           for
-        required: true
+        required: false
         schema:
           type: string
           format: array (int32)
