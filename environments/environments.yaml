@@ -325,7 +325,7 @@ paths:
       - name: poolIds
         in: query
         description: pool Ids to fetch
-        required: true
+        required: false
         schema:
           type: string
           format: array (int32)
