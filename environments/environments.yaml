@@ -3043,6 +3043,46 @@ paths:
       #   Delete a task group:
       #     $ref: ./httpExamples/taskgroups/DELETE__DeleteATaskGroup.json
   /{organization}/{project}/_apis/distributedtask/variablegroups:
+    post:
+      summary: Create a new variable group
+      operationId: createVariableGroup
+      tags:
+        - Variable Groups
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOptions'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VariableGroupResponse'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VariableGroupResponse'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIError'
     get:
       tags:
       - Variablegroups
@@ -8274,6 +8314,54 @@ components:
             \ for the input for \"expression\" type Eg:eq(variables['Build.SourceBranch'],\
             \ 'refs/heads/master');eq(value, 'refs/heads/master')"
       description: ""
+    Variable:
+      type: object
+      properties:
+        Value:
+          type: string
+        IsSecret:
+          type: boolean
+        IsReadOnly:
+          type: boolean
+    VariableGroupProjectReference:
+      type: object
+      properties:
+        Name:
+          type: string
+        ProjectReference:
+          $ref: '#/components/schemas/ProjectReference'
+    VariableGroupBody:
+      type: object
+      properties:
+        Variables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Variable'
+        Type:
+          type: string
+        VariableGroupProjectReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/VariableGroupProjectReference'
+        Name:
+          type: string
+        Description:
+          type: string
+    CreateOptions:
+      type: object
+      properties:
+        Organization:
+          type: string
+        Project:
+          type: string
+        VariableGroup:
+          $ref: '#/components/schemas/VariableGroupBody'
+    VariableGroupResponse:
+      type: object
+      # Define properties based on actual response structure
+    APIError:
+      type: object
+      # Define properties based on actual error response structure
     VariableGroup:
       type: object
       properties:
@@ -8344,18 +8432,6 @@ components:
             $ref: '#/components/schemas/VariableValue'
           description: Sets variables contained in the variable group.
       description: ""
-    VariableGroupProjectReference:
-      type: object
-      properties:
-        description:
-          type: string
-          description: Gets or sets description of the variable group.
-        name:
-          type: string
-          description: Gets or sets name of the variable group.
-        projectReference:
-          $ref: '#/components/schemas/ProjectReference'
-      description: A variable group reference is a shallow reference to variable group.
     VariableGroupProviderData:
       type: object
       description: Defines provider data of the variable group.
