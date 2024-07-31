@@ -3059,6 +3059,11 @@ paths:
           required: true
           schema:
             type: string
+        - name: api-version
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -8350,12 +8355,20 @@ components:
     CreateOptions:
       type: object
       properties:
-        Organization:
+        Variables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Variable'
+        Type:
           type: string
-        Project:
+        VariableGroupProjectReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/VariableGroupProjectReference'
+        Name:
           type: string
-        VariableGroup:
-          $ref: '#/components/schemas/VariableGroupBody'
+        Description:
+          type: string
     VariableGroupResponse:
       type: object
       # Define properties based on actual response structure
