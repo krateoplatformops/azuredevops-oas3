@@ -36,6 +36,106 @@ tags:
 - name: Variablegroups
 - name: Yamlschema
 paths:
+  /{organization}/{project}/_apis/distributedtask/securefiles/{secureid}:
+    get:
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: secureid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: api-version
+          in: query
+          required: true
+          schema:
+            type: string
+      summary: Get secure file details
+      operationId: getSecureFile
+      responses:
+        '200':
+          description: Secure file details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecureFileResource'
+        '400':
+          description: Bad request
+        '404':
+          description: Secure file not found
+    delete:
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: secureid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: api-version
+          in: query
+          required: true
+          schema:
+            type: string
+      summary: Delete a secure file
+      operationId: deleteSecureFile
+      responses:
+        '204':
+          description: Secure file deleted successfully
+        '400':
+          description: Bad request
+        '404':
+          description: Secure file not found
+  /{organization}/{project}/_apis/distributedtask/securefiles:
+    get:
+      parameters:
+      - name: organization
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: continuationToken
+        in: query
+        schema:
+          type: string
+      summary: List secure files
+      operationId: listSecureFiles
+      responses:
+        '200':
+          description: List of secure files retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResponse'
+        '400':
+          description: Bad request
   /{organization}/_apis/distributedtask/agentclouds:
     get:
       tags:
@@ -8755,104 +8855,3 @@ x-ms-paths:
       #     $ref: ./httpExamples/variablegroups/GET_VariableGroupsByGroupName.json
       #   Get variable groups using action filter:
       #     $ref: ./httpExamples/variablegroups/GET_VariableGroupsByActionFilter.json
-  /{organization}/{project}/_apis/distributedtask/securefiles/{secureid}:
-    get:
-      parameters:
-        - name: organization
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: secureid
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: api-version
-          in: query
-          required: true
-          schema:
-            type: string
-      summary: Get secure file details
-      operationId: getSecureFile
-      responses:
-        '200':
-          description: Secure file details retrieved successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SecureFileResource'
-        '400':
-          description: Bad request
-        '404':
-          description: Secure file not found
-    delete:
-      parameters:
-        - name: organization
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: secureid
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: api-version
-          in: query
-          required: true
-          schema:
-            type: string
-      summary: Delete a secure file
-      operationId: deleteSecureFile
-      responses:
-        '204':
-          description: Secure file deleted successfully
-        '400':
-          description: Bad request
-        '404':
-          description: Secure file not found
-  /{organization}/{project}/_apis/distributedtask/securefiles:
-    get:
-      parameters:
-      - name: organization
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: project
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: api-version
-        in: query
-        required: true
-        schema:
-          type: string
-      - name: continuationToken
-        in: query
-        schema:
-          type: string
-      summary: List secure files
-      operationId: listSecureFiles
-      responses:
-        '200':
-          description: List of secure files retrieved successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListResponse'
-        '400':
-          description: Bad request
-
