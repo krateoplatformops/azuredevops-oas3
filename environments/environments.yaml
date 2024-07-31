@@ -3068,7 +3068,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOptions'
+              $ref: '#/components/schemas/VariableGroupParameters'
       responses:
         '200':
           description: OK
