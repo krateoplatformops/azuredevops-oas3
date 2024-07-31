@@ -1120,53 +1120,6 @@ paths:
       x-ms-preview: true
       x-codegen-request-body-name: body
   /{organization}/_apis/distributedtask/variablegroups/{groupId}:
-    put:
-      tags:
-      - Variablegroups
-      description: Update a variable group.
-      operationId: Variablegroups_Update
-      parameters:
-      - name: organization
-        in: path
-        description: The name of the Azure DevOps organization.
-        required: true
-        schema:
-          type: string
-      - name: groupId
-        in: path
-        description: Id of the variable group to update.
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: api-version
-        in: query
-        description: Version of the API to use.  This should be set to '7.1-preview.2'
-          to use this version of the api.
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/VariableGroupParameters'
-        required: true
-      responses:
-        "200":
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VariableGroup'
-      security:
-      - oauth2:
-        - vso.variablegroups_manage
-      x-ms-docs-override-version: 7.1-preview.2
-      x-ms-vss-resource: variablegroups
-      x-ms-vss-method: UpdateVariableGroup
-      x-ms-preview: true
-      x-codegen-request-body-name: body
     delete:
       tags:
       - Variablegroups
@@ -3189,6 +3142,53 @@ paths:
       # x-ms-examples:
       #   Get a variable group:
       #     $ref: ./httpExamples/variablegroups/GET_VariableGroup.json
+    put:
+      tags:
+      - Variablegroups
+      description: Update a variable group.
+      operationId: Variablegroups_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: groupId
+        in: path
+        description: Id of the variable group to update.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '7.1-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VariableGroupParameters'
+        required: true
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VariableGroup'
+      security:
+      - oauth2:
+        - vso.variablegroups_manage
+      x-ms-docs-override-version: 7.1-preview.2
+      x-ms-vss-resource: variablegroups
+      x-ms-vss-method: UpdateVariableGroup
+      x-ms-preview: true
+      x-codegen-request-body-name: body
 components:
   schemas:
     AadOauthTokenRequest:
