@@ -3064,7 +3064,7 @@ paths:
       - name: groupIds
         in: query
         description: Comma separated list of Ids of variable groups.
-        required: true
+        required: false
         schema:
           type: string
           format: array (int32)
