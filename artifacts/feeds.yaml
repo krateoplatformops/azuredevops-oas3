@@ -2676,7 +2676,8 @@ components:
       type: object
       properties:
         identityDescriptor:
-          $ref: '#/components/schemas/IdentityDescriptor'
+          type: string
+          description: IdentityDescriptor for the identity associated with this role.
         identityId:
           type: string
           description: IdentityId corresponding to the IdentityDescriptor
