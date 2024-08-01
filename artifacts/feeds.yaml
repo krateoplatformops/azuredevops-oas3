@@ -2512,7 +2512,8 @@ components:
           type: string
           description: Display name for the identity.
         identityDescriptor:
-          $ref: '#/components/schemas/IdentityDescriptor'
+          type: string
+          description: Identity descriptor.
         identityId:
           type: string
           description: Id of the identity associated with this role.
