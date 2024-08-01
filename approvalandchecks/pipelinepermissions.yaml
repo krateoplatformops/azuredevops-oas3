@@ -51,9 +51,7 @@ paths:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/ResourcePipelinePermissions'
+              $ref: '#/components/schemas/ResourcePipelinePermissions'
         required: true
       responses:
         "200":
