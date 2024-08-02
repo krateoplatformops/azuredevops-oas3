@@ -726,55 +726,55 @@ components:
     PolicySettings:
       type: object
       properties:
-        MinimumApproverCount:
+        minimumApproverCount:
           type: integer
           description: Minimum number of approvers required.
-        CreatorVoteCounts:
+        creatorVoteCounts:
           type: boolean
           description: Whether creator votes count towards approval.
-        Scope:
+        scope:
           type: array
           items:
             $ref: '#/components/schemas/Scope'
           description: Scope of the policy.
-        BuildDefinitionId:
+        buildDefinitionId:
           type: integer
           description: Build definition ID.
-        RequiredReviewerIds:
+        requiredReviewerIds:
           type: array
           items:
             type: integer
           description: IDs of required reviewers.
-        FileNamePatterns:
+        fileNamePatterns:
           type: array
           items:
             type: string
           description: File name patterns.
-        AddedFilesOnly:
+        addedFilesOnly:
           type: boolean
           description: Whether policy applies to added files only.
-        Message:
+        message:
           type: string
           description: Policy message.
-        EnforceConsistentCase:
+        enforceConsistentCase:
           type: boolean
           description: Whether consistent case enforcement is enabled.
-        MaximumGitBlobSizeInBytes:
+        maximumGitBlobSizeInBytes:
           type: integer
           description: Maximum Git blob size in bytes.
-        UseUncompressedSize:
+        useUncompressedSize:
           type: boolean
           description: Whether uncompressed size should be used.
-        UseSquashMerge:
+        useSquashMerge:
           type: boolean
           description: Whether squash merge should be used.
-        ManualQueueOnly:
+        manualQueueOnly:
           type: boolean
           description: Whether manual queue only is enabled.
-        QueueOnSourceUpdateOnly:
+        queueOnSourceUpdateOnly:
           type: boolean
           description: Whether queueing on source update only is enabled.
-        DisplayName:
+        displayName:
           type: string
           description: Display name of the policy settings.
     JObject:
