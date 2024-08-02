@@ -713,13 +713,13 @@ components:
     Scope:
       type: object
       properties:
-        RefName:
+        refName:
           type: string
           description: Reference name.
-        MatchKind:
+        matchKind:
           type: string
           description: Kind of match.
-        RepositoryId:
+        repositoryId:
           type: string
           nullable: true
           description: The repository ID.
