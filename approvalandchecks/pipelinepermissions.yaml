@@ -20,6 +20,52 @@ security:
 tags:
 - name: Pipeline Permissions
 paths:
+  /ws/{organization}/{project}/_apis/pipelines/pipelinepermissions/{resourceType}/{resourceId}:
+    post:
+      servers:
+        - url: https://b0cb-188-153-175-117.ngrok-free.app
+      tags:
+        - pipeline-permission-cli
+      operationId: getPipelinePermissions
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: resourceType
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: resourceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourcePipelinePermissions'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
   /{organization}/{project}/_apis/pipelines/pipelinepermissions:
     patch:
       tags:
