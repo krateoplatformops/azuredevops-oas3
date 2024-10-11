@@ -23,7 +23,7 @@ paths:
   /ws/{organization}/{project}/_apis/pipelines/pipelinepermissions/{resourceType}/{resourceId}:
     post:
       servers:
-        - url: https://cruel-cases-live.loca.lt
+        - url: https://brown-yaks-live.loca.lt
       tags:
         - pipeline-permission-cli
       operationId: getPipelinePermissions
