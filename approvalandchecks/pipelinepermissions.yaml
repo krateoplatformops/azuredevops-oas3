@@ -23,7 +23,7 @@ paths:
   /ws/{organization}/{project}/_apis/pipelines/pipelinepermissions/{resourceType}/{resourceId}:
     post:
       servers:
-        - url: https://b0cb-188-153-175-117.ngrok-free.app
+        - url: https://cruel-cases-live.loca.lt
       tags:
         - pipeline-permission-cli
       operationId: getPipelinePermissions
